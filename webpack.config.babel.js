@@ -1,5 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
+import build from './app/build';
+import ReactRenderer from './lib/ReactRenderer';
 
 const config = {
   entry: {
@@ -23,6 +25,7 @@ const config = {
     extensions: ['', '.js', '.jsx', '.json'],
   },
   plugins: [
+    new ReactRenderer(build),
   ],
 };
 
