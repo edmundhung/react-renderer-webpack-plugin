@@ -5,7 +5,7 @@ import ReactRenderer from './lib/ReactRenderer';
 
 const config = {
   entry: {
-    app: path.join(__dirname, 'app/index.js'),
+    'assets/app': path.join(__dirname, 'app/index.js'),
   },
   output: {
     filename: '[name].js',

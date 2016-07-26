@@ -16,7 +16,7 @@ function Html(props) {
       </head>
       <body>
         <div id="app">{children}</div>
-        <script src={assets.app.path} />
+        <script src={assets['assets/app'].path} />
       </body>
     </html>
   );
