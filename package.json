@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
     "build": "webpack --progress --display-chunks --display-modules",
+    "clean": "rimraf dist",
     "lint": "eslint .",
+    "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^5.2.2",
     "eval": "^0.1.1",
     "hoist-non-react-statics": "^1.2.0",
+    "rimraf": "^2.5.4",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
