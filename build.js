@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 
-function build(assets) {
-  return Promise.resolve({
+function build(options, callback) {
+  const { assets } = options;
+
+  callback(null, {
     'index.html': <Html assets={assets} />,
   });
 }
@@ -16,7 +18,9 @@ function Html(props) {
       </head>
       <body>
         <div id="app">{children}</div>
-        <script src={assets['assets/app'].path} />
+        {Object.keys(assets).map(asset => (
+          <script src={assets[asset]} />
+        ))}
       </body>
     </html>
   );
@@ -28,4 +32,3 @@ Html.propTypes = {
 };
 
 export default build;
-export { Html };

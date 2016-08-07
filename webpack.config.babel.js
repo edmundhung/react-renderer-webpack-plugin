@@ -1,11 +1,22 @@
 import path from 'path';
-import webpack from 'webpack';
-import build from './app/build';
 import ReactRenderer from './lib/ReactRenderer';
 
 const config = {
+  devServer: {
+    historyApiFallback: true,
+    compress: false,
+    quiet: false,
+    noInfo: false,
+    lazy: false,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    },
+    headers: {},
+    stats: { colors: true },
+  },
   entry: {
-    'assets/app': path.join(__dirname, 'app/index.js'),
+    'assets/app': path.join(__dirname, 'index.js'),
   },
   output: {
     filename: '[name].js',
@@ -25,7 +36,7 @@ const config = {
     extensions: ['', '.js', '.jsx', '.json'],
   },
   plugins: [
-    new ReactRenderer(build),
+    new ReactRenderer(),
   ],
 };
 
